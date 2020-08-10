@@ -7,10 +7,9 @@ f(x) = 1
 def lloyd_max(N, y1, y2, y3):
 
     # STEP 1 : INITIALIZATION
-    y1, y2, y3 = -0.5, 0, 0.5
     b0, b3 = -0.5, 0.5
 
-    for i in range(5):
+    for i in range(N):
 
         # STEP 2 : Get BOUNDARIES
         b1 = (y2 + y1) / 2
@@ -27,9 +26,9 @@ def lloyd_max(N, y1, y2, y3):
 
 
 if __name__ == "__main__":
-    N = int(input("Enter the number of iterations, the N value (ex. 3) :"))
-    y1 = float(input("Enter the y1 value (ex. -0.5) :"))
-    y2 = float(input("Enter the y2 value (ex. 0) :"))
-    y3 = float(input("Enter the y2 value (ex. 0.5) :"))
+    N = int(input("Enter the number of iterations, the N value (ex. 3): "))
+    y1 = float(input("Enter the y1 value (ex. -0.5): "))
+    y2 = float(input("Enter the y2 value (ex. 0): "))
+    y3 = float(input("Enter the y3 value (ex. 0.5): "))
 
     lloyd_max(N, y1, y2, y3)
