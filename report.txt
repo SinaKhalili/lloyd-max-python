@@ -1,0 +1,41 @@
+# Q3
+This algorithm was pretty straighforward to implement under the given conditions. This
+is because we can analytically solve the integral, and hence have no code dealing with
+it (because the analytical solution is hardcoded). 
+
+The *true* values are -0.333.. 0, 0.333...
+
+Interestingly, as seen in the second example, we need more
+guesses with non uniform guesses, than with the naive but
+uniform guesses in the first result. 
+
+The absolute worst we can do is of course accidentally 
+dividing by zero. Now we see a need for laplacian smoothing!
+
+Notable also is reversing y1 and y3 doesn't slow down the algorithm
+by very much even though one would assume (naively) that would double the time
+it would take to converge.
+
+## Results:
+
+Enter the number of iterations, the N value (ex. 3): 3
+Enter the y1 value (ex. -0.5): -0.5
+Enter the y2 value (ex. 0): 0
+Enter the y2 value (ex. 0.5): 0.5
+Iteration 0 :  Y values: -0.5, 0.0, 0.5
+Iteration 1 :  Y values: -0.375, 0.0, 0.375
+Iteration 2 :  Y values: -0.34375, 0.0, 0.34375
+Y Values final: -0.3359375, 0.0, 0.3359375
+
+Enter the number of iterations, the N value (ex. 3): 5
+Enter the y1 value (ex. -0.5): -0.3
+Enter the y2 value (ex. 0): 0.2
+Enter the y2 value (ex. 0.5): 0.4
+Iteration 0 :  Y values: -0.3, 0.2, 0.4
+Iteration 1 :  Y values: -0.27499999999999997, 0.12500000000000003, 0.4
+Iteration 2 :  Y values: -0.2875, 0.09375000000000003, 0.38125000000000003
+Iteration 3 :  Y values: -0.2984375, 0.07031250000000003, 0.36875
+Iteration 4 :  Y values: -0.30703125000000003, 0.052734375000000014, 0.359765625
+Y Values final: -0.31357421875, 0.039550781249999986, 0.35312499999999997
+
+
